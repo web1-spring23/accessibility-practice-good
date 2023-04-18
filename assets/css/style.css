@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@700&family=Lexend:wght@400;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --cream: #FFF9F2;
+    --teal: #3D96B7;
+    --dark-blue: #333651;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Lexend', sans-serif;
+    background-color: var(--cream);
+    font-size: 2rem;
+    
+
+
+}
+
+*:focus {
+    outline: 3px dashed #333651;
+}
+
+#main {
+    width: 60%;
+    margin: 100px auto;
+}
+
+h1 {
+    color: var(--dark-blue);
+    font-family: 'Grandstander', cursive;
+    font-size: 3.2rem;
+
+}
+
+/*don't show bullets */
+#nav menu li {
+    list-style: none;
+    margin-right: 65px;
+}
+
+/* positions the tcnj logo and menu */
+header #nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--teal);
+    padding: 30px;
+
+}
+
+/* positions the items inside of the menu */
+header #nav menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px;
+    align-items: center;
+}
+
+
+
+/*don't show menus nested in a menu that is nested in a nav. aka our submenus*/
+header #nav menu menu {
+    display: none;
+
+}
+
+
+
+/*we applied a class attribute to the logo in the hmtl*/
+.logo {
+    font-family: 'Grandstander', cursive;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+/*all links*/
+header #nav menu li a {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--cream);
+}
+
+
+/*styles apply to the buttons and the link with the button-primary class*/
+button, .button-primary, .nav-item {
+
+    border: none;
+    color: var(--cream);
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+}
+
+/* Become a foster styling */
+.button-primary {
+      background-color: var(--dark-blue);
+      padding: 14px;
+      border-radius: 5px;
+}
+
+.button-primary:hover {
+    outline-color: var(--cream);
+    outline-width: 3px;
+    outline-style: solid;
+    cursor: pointer;
+    color: var(--cream);
+    text-decoration: none;
+}
+
+/* Dropdown menu button styling */
+header nav menu button {
+    background: none;
+    padding: 0px;
+}
+
+/* adds the arrow icon if it's a button */
+.nav-item {
+
+    padding-left: 10px;
+  }
+
+
+
+/*submenu links*/
+header #nav menu li menu li {
+  padding: 5px;
+}
+
+
+
+
+@media (min-width: 1311px) {
+  
+/* Don't show the mobile menu button if the screen is larger than the breakpoint */
+    #mobile-menu-button {
+       display: none;
+    }
+    
+
+ /*buttons and links on hover*/
+header nav menu button:hover, header nav menu li a:hover {
+    color: var(--dark-blue);
+
+}
+    
+/*apply this style to a menu with a sibling of button when the li ancestor is being hovered on that has an ancestor of menu and nav*/
+header #nav menu li:hover button + menu, .menu-expand{
+    display: block !important;
+    position: absolute;
+    background-color: var(--teal);
+    color: var(--cream);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+}
+
+@media (max-width: 1310px) {
+/* the whole navigation section */
+header nav {
+    display: block;
+    padding: 0px;
+    
+} 
+
+/* just the menu part (excludes tcnj) */
+header nav > menu {
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    padding-left: 0px;
+    background-color: var(--dark-blue);
+    height: 100vh;
+ 
+}
+
+/* all of the lis should span the full width */
+header nav menu li {
+width: 100%;
+
+}
+
+/* sub menus */
+header nav menu menu {
+    display: none;
+    background-color: var(--teal);
+    padding-left: 0px;
+}
+
+/* sub menu li */
+header nav menu li menu li  {
+    padding-left: 30px;
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+/* the menu items, which can be a link or button */
+header nav menu li a, header nav menu button {
+    font-size: 2.4rem;
+    padding: 30px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-bottom: 2px solid var(--teal);
+}
+
+/* don't let the link color change on hover */
+header nav menu li a:hover {
+    color: var(--cream);
+}
+.mobile-hidden {
+    display: none;
+}
+
+
+header nav > div {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+#mobile-menu-button {
+    background-color: transparent;
+    display: block;
+}
+
+
+}
+
+#popup {
+position: relative;
+background-color: white;
+padding: 40px 100px;
+border-radius: 5px;
+text-align: center;
+
+
+
+
+}
+
+#popup button {
+    background-color: #333651;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+#popup-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: rgba(0,0,0,.7);
+  
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-question {
+    margin: 40px 0px;
+}
+
+.faq-question #faq-button {
+
+width: 100%;
+text-align: left;
+border-bottom: 2px solid #333651;
+font-size: 24px;
+color: #333651;
+position: relative;
+background-color: transparent;
+}
+
+.faq-question #faq-button span {
+    
+    position: absolute;
+    right: 0px;
+    color:#333651;
+    font-size: 30px;
+}
+
+.faq-question #faq-button.open::after {
+   
+    position: absolute;
+    right: 0px;
+    color:#333651;
+    font-size: 30px;
+}
+
+.faq-question p {
+    display: none;
+     color:#333651;
+}
+
+#skip-to-content {
+position: absolute;
+top: -100px;
+}
+
+#skip-to-content:focus {
+    top: 0px;
+}
